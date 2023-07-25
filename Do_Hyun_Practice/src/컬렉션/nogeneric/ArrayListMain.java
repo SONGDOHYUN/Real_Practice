@@ -115,7 +115,9 @@ public class ArrayListMain {
 		System.out.println();
 		System.out.println("5-1. 계좌주 이름이 KING인 계좌 모두 삭제: Iterator 클래스 사용");
 		System.out.println("삭제 전: "+accountList);
-		Iterator iterator=accountList.iterator();
+	
+		System.out.println("--Iterator 사용하여 삭제하기--");
+		Iterator<Object> iterator=accountList.iterator();
 		//accountList라는 배열에서 순회하면 객체를 얻기 위해 iterator()메소드 실행해 객체 반환받아서 iterator 변수에 저장함
 		while(iterator.hasNext()) {
 			Account tempAccount=(Account)iterator.next();

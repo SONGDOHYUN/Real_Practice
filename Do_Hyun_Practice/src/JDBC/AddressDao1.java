@@ -9,7 +9,7 @@ import java.sql.Statement;
 
 /*
  * DTO에 멤버필드, getter, setter 입력
- * DAO에 DB 연결 코드, 기본적인 CRUD 실행
+ * DAO에 DB 연결 코드, 기본적인 CRUD 실행->SQL문에 변수 없고 딱 넣은 것만 들어감
  */
 public class AddressDao1 {
 	
@@ -78,9 +78,11 @@ public class AddressDao1 {
 			//DB 연결
 			Class.forName(driverClass);
 			Connection con=DriverManager.getConnection(url,user, password);
+			
+			//SQL문 실행할 준비 완료
 			Statement stmt=con.createStatement();
 			
-			//결과의 집합 반환=> ResultSet 사용
+			//결과의 집합 반환=> ResultSet 사용: 각 정보를 set에 담아서 저장하기 위함
 			ResultSet rs=stmt.executeQuery(selectALLSQL);
 			
 			//결과 돌면서 모두 출력함=> while 문 사용

@@ -13,6 +13,15 @@ public class HashSetMain {
 		Account acc4 = new Account(4444, "YONG", 45000, 1.2);
 		Account acc5 = new Account(5555, "SANG", 99000, 0.9);
 		
+		//배열 생성-> 위에랑 같은 코드임
+//		Account[] accountArray=new Account[] {
+//				new Account(1111, "BING", 33000, 0.5),
+//				new Account(2222, "KING", 12000, 0.1),
+//				new Account(3333, "KING", 89000, 0.8),
+//				new Account(4444, "YONG", 45000, 1.2)
+//		};
+		
+		//NonGeneric-> 최상위 객체인 Object
 		HashSet<Object> accountSet=new HashSet<Object>();
 		System.out.println("추가 전 set size: "+accountSet.size()); //0
 		accountSet.add(acc1);
@@ -24,7 +33,7 @@ public class HashSetMain {
 		System.out.println(accountSet); //순서없이 마구잡이로 출력되는 거 볼 수 있음
 		
 		System.out.println("add: 중복객체");
-		boolean isAdd=accountSet.add(acc1);
+		boolean isAdd=accountSet.add(acc1); //이미 추가되어있음
 		System.out.println("추가할 수 있는가?: "+isAdd);
 		System.out.println(accountSet.size());
 		

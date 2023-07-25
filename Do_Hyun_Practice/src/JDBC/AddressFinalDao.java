@@ -11,8 +11,9 @@ import java.util.List;
  * DAO: DB 연결, 기본적인 CRUD 메소드 작성
  * 서비스: 비즈니스 로직 실행
  * 
- * SQL문, DataSource클래스 따로 만들거임
+ * SQL문, DataSource클래스, properties 파일 따로 만들거임
  * preparedStatement 사용해서 DB연결 한번만 할거임
+ * ->쿼리 미리 로딩하고 -> 각 조건에 맞게 세팅하고 -> 그 후에 select 문의 경우에는 ResultSet 돌리기 
  * 반환타입 다 다르게 할거임
  * 
  */
@@ -27,7 +28,7 @@ public class AddressFinalDao{
 	
 	//insert
 	public int insert(Address insertAddress) throws Exception{
-		//DB 연결
+
 		Connection con=dataSource.getConnection();
 		PreparedStatement pstmt1=con.prepareStatement(AddressFinalSQL.ADDRESS_INSERT);
 		
@@ -181,15 +182,4 @@ public class AddressFinalDao{
 		//반환
 		return findList;
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

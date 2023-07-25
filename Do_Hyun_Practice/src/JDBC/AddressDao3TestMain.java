@@ -5,10 +5,12 @@ package JDBC;
 public class AddressDao3TestMain {
 
 	public static void main(String[] args) throws Exception{
-		//객체 생성
+		//객체 생성->AddressDao3의 필드 사용하기 위함임
 		AddressDao3 dao3=new AddressDao3();
+	
 		System.out.println("1. insert");
 		//파라미터에 들어갈 객체를 따로 생성해서 정보를 입력하고 그걸 메소드의 파라미터로 넣는다
+		//애초에 CRUD 할 객체들은 DTO 법칙을 따름->DTO 클래스 타입으로 객체 생성해야함
 		
 		//no는 0으로 둔다-> 자동 sequence로 입력되니까
 		Address insertAddress=new Address(0, "추가이름1", "추가번호1", "추가주소1");

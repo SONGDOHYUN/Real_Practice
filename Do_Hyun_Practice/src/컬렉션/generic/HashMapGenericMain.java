@@ -8,14 +8,14 @@ import java.util.Set;
 public class HashMapGenericMain {
 
 	public static void main(String[] args) {
-		//객체 생성: key-value
+		//객체 생성: key-value: String-int;
 		HashMap<String, Car> carMap=new HashMap<String, Car>();
 		carMap.put("1111", new Car("1111", 10));
 		carMap.put("2222", new Car("2222", 20));
 		carMap.put("3333", new Car("3333", 30));
 		carMap.put("4444", new Car("4444", 40));
 		carMap.put("5555", new Car("5555", 50));
-		System.out.println("carMap 크기: "+carMap.size());
+		System.out.println("carMap 크기: "+carMap.size()); //5
 		
 		System.out.println("get(key)");
 		carMap.get("1111").print();
@@ -23,6 +23,7 @@ public class HashMapGenericMain {
 		System.out.println("remove(key)");
 		carMap.remove("1111");
 		
+		//map 전체 출력할 시 key-value 쌍으로 entrySet으로 담아서 돌려서 담기
 		System.out.println("--전체 출력--");
 		Car.headerPrint();
 		Set<Map.Entry<String, Car>> carEntry=carMap.entrySet();
@@ -33,12 +34,14 @@ public class HashMapGenericMain {
 			car.print();
 		}
 		System.out.println("keySet-> "+carMap.keySet());
+		System.out.println("ValueSet-> "+carMap.values()); //value들의 주소값 출력됨
+		
 		System.out.println("--입차시간--");
 		Car car1=new Car("1234", 15);
 		if(!carMap.containsKey("1234")) {
 			carMap.put(car1.getNo(), car1);
 		}
-		System.out.println("추가 후 :"+carMap);
+		System.out.println("추가 후 :"+carMap.keySet());
 		
 		System.out.println("--차량번호 1234번 찾기--");
 		Car findCar=carMap.get("1234");
@@ -66,6 +69,14 @@ public class HashMapGenericMain {
 		System.out.println("출차 후: "+car3.getOutTime());
 		
 		Car.headerPrint();
+		Set<Map.Entry<String, Car>> carList5=carMap.entrySet();
+		for(Map.Entry<String, Car>Cars:carList5) {
+			Car carInfo=Cars.getValue();
+			carInfo.print();
+		}
+		System.out.println("--------------");
+		
+		
 		Set<Map.Entry<String, Car>> carEntry1=carMap.entrySet();
 		for(Map.Entry<String, Car> entry: carEntry1) {
 			String key=entry.getKey();
@@ -73,9 +84,6 @@ public class HashMapGenericMain {
 			//System.out.println("key: "+key);
 			car.print();
 		}
-		
-		
-		
 	}
 
 }

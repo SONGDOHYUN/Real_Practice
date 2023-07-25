@@ -23,7 +23,11 @@ public class MyArrayListMain {
 		System.out.println("--myArrayList를 하나 삭제 : null 값으로 만들겠습니다--");
 		myArrayList.remove(0); //remove메소드 실행 시 index 0번 null값 만들고 size 1 감소됨
 		System.out.println("myArrayList의 0번째 Account 객체: "+myArrayList.get(0)); //null
-		System.out.println("myArrayList의 배열 크기: "+myArrayList.size()); //2
+		System.out.println("myArrayList의 배열 크기: "+myArrayList.size()); //그래도 여전히 3
+		System.out.println("myArrayList의 배열 전체 출력");
+		for(int i=0;i<myArrayList.size();i++) {
+			System.out.println(myArrayList.get(i));
+		}
 		
 		Account.headerPrint();
 		for(int i=0;i<myArrayList.size();i++) {

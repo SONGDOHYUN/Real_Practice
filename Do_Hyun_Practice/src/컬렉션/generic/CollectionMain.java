@@ -52,6 +52,7 @@ public class CollectionMain {
 		Collections.shuffle(accountList);
 		System.out.println("shuffle 정렬 후 리스트 출력: "+accountList);
 		
+		System.out.println();
 		System.out.println("--sort[Comparator]--");
 		System.out.println("balance를 내림차순: 높은 것 부터 나오게 정렬하겠습니다");
 		Collections.sort(accountList, new AccountBalanceDescComparator());

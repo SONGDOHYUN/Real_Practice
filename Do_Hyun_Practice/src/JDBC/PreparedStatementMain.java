@@ -10,12 +10,12 @@ public class PreparedStatementMain{
 	public static void main(String[] args) throws Exception{
 		//DB 정보
 		String driverClass="oracle.jdbc.OracleDriver";
-		String url="jdbc:oracle:thin:@182.237.126.19:1521:xe";
-		String user="jdeveloper30";
-		String password="jdeveloper30";
-		
-		//SQL문
-		String deleteSQL="delete from emp where no=?";
+		String url="jdbc:oracle:thin:@localhost:1521:xe";
+		String user="scott";
+		String password="tiger";
+	
+		//SQL
+		String deleteSQL="delete from address where no=?";
 		
 		//DB 연결
 		Class.forName(driverClass);

@@ -7,6 +7,8 @@ package JDBC;
  * 
  */
 public class AddressFinalSQL {
+
+	//public static final String 대문자="";
 	
 	public static final String ADDRESS_INSERT
 	="insert into address values(address_no_seq.nextval,?,?,?)";

@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
 
-
 /*
  * 1. JDBC[Java Database Connectivity]
  * -> 자바 프로그램과 DB 사이의 연결을 제공함
@@ -27,13 +26,13 @@ import java.sql.Statement;
  * -> Class.forname(): 사용하여 드라이버 로드
  * 
  * 2) DB 연결
- * -> DriverManager.getConnection(): DB 연결
+ * -> DriverManager.getConnection(): URL, User, Password 정보로 DB 연결
  * -> JDBC URL, 사용자 이름, 비밀번호 등의 연결 정보를 얻음
  * 
  * 3) SQL 쿼리 실행
- * -> Connection 객체 생성-> Statement, PreparedStatement 사용하여 SQL CRUD 실행
+ * -> Connection 객체 생성-> Statement, PreparedStatement[SQL 쿼리를 실행하는 객체] 사용하여 SQL CRUD 실행
  * 
- * 4) 결과 반환
+ * 4) 결과 반환: select 쿼리일 시 사용함
  * -> ResultSet 객체 생성-> 결과 반환함
  * 
  * 5) 연결 해제
@@ -42,7 +41,7 @@ import java.sql.Statement;
  * 
  * 3. DTO, DAO
  * 
- * 3-1. DTO [Data Transfer Object] : 데이터 전달!!객체
+ * 3-1. DTO [Data Transfer Object] : 데이터 전달!!하기 위한 객체들의 정보 모음
  * -> DB의 테이블 구조와 일치하는 형태로 생성됨
  * -> 멤버필드, 접근 메소드(getter, setter) 등이 구성요소임
  * 
@@ -148,14 +147,18 @@ import java.sql.Statement;
 	 * 따라서 Service 구체화된 비즈니스 CRUD나 메소드가 있는거임 
  * 
  * 
- *  1) AddressService.java 클래스생성 
+ *  1) AddressService.java 클래스 생성 
 	★★★★★★★★★★★★★★★★★★★★★★★★★
-	2) AddressDao객체를 멤버필드로선언
-	★★★★★★★★★★★★★★★★★★★★★★★★★
-	3) AddressService클래스생성자에서 AddressDao객체생성
-	4) 클라이언트요구사항분석시 도출된 단위업무당 한개의 메쏘드생성
-	5) AddressService클래스 메쏘드기술(인자 ,반환타입)
-	6) 메쏘드구현
+	2) AddressDao객체를 멤버필드로 선언
+	
+	★★★★★★★★★★★★ !!!!!!!!!중요!!!!!!!!!! ★★★★★★★★★★★★★
+	3) AddressService 클래스 기본 생성자에서 AddressDao 객체 생성할 수 있게 함
+	->AddressService 클래스의 객체 생성 시 동시에 AddressDao의 객체도 생성되어 AddressDao 클래스의 필드 모두 사용할 수 있게!!
+	★★★★★★★★★★★★ !!!!!!!!!중요!!!!!!!!!! ★★★★★★★★★★★★★
+	
+	4) 클라이언트 요구사항 분석 시 도출된 단위 업무 당 한개의 메쏘드 생성
+	5) AddressService클래스 메쏘드 기술(인자 ,반환타입)
+	6) 메쏘드 구현
  */
 public class JDBC {
 

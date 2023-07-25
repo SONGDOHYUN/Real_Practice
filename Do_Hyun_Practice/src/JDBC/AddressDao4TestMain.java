@@ -7,7 +7,7 @@ public class AddressDao4TestMain {
 	public static void main(String[] args) throws Exception {
 		//test 하기 위한 객체 생성
 		AddressDao4 dao4=new AddressDao4();
-		
+	
 		System.out.println("1. insert");
 		Address insertAddress=new Address(0, "추가이름", "추가번호", "추가주소");
 		int insertCount=dao4.insert(insertAddress);

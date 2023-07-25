@@ -6,9 +6,12 @@ import java.util.List;
  * DAO가(-CRUD통해서-DB연결했었음)
  * Service-DAO: 서비스는 DAO에 접근해서 DAO 도움을 받아 DB에 접근하고자 함
  * 따라서 Service 구체화된 비즈니스 CRUD나 메소드가 있는거임 
+ * 
+ * 
+ * AddressFinalDao의 객체를 멤버 필드로 선언함+기본 생성자에 AddressFinalDao 생성자도 넣음으로서
+ * ->AddressFinalService 객체 생성 시 자동적으로 AddressFinalDao 필드 모두 사용가능해짐
  */
 public class AddressFinalService {
-	
 	//DAO를 멤버필드로 선언한다->그래야 Dao.메소드()해서 쓸 수 있으니까
 	private AddressFinalDao addressFinalDao;
 	

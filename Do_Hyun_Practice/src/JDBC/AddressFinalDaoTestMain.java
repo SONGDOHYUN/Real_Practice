@@ -1,11 +1,12 @@
 package JDBC;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AddressFinalDaoTestMain {
 
 	public static void main(String[] args) throws Exception{
-		//테스트하기 위한(필드 사용하기 위한) 객체 생성
+		//테스트하기 위한(필드 사용하기 위한) 객체 생성-> 기본 생성자에서 객체 생성과 동시에 dataSource 로딩됨
 		AddressFinalDao dao=new AddressFinalDao();
 		
 		System.out.println(">>insert>>");

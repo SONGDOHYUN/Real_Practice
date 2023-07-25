@@ -9,7 +9,7 @@ import java.util.Set;
 public class HashMapMain extends Object{
 
 	public static void main(String[] args) {
-		//객체생성: key-value
+		//객체생성: key-value: NonGeneric->최상위 객체 Object
 		HashMap<Object, Object> carMap=new HashMap<Object,Object>();
 		System.out.println("추가 전: "+carMap.size()); //0
 		Car car1=new Car("1111", 1, 10, 1000);
@@ -37,6 +37,15 @@ public class HashMapMain extends Object{
 		carMap.remove("3333");
 		System.out.println(carMap);
 		System.out.println("삭제 후: "+carMap.size()); //4
+		
+//		System.out.println("-------삭제 후 carMap 전체 출력-------");
+//		Set<Map.Entry<Object, Object>> entryList=carMap.entrySet();
+//		for(Map.Entry<Object, Object> entries:entryList) {
+//			String key=(String)entries.getKey();
+//			Car value=(Car)entries.getValue();
+//			System.out.println("Key: "+key);
+//			System.out.println("value: "+value);
+//		}
 		
 		System.out.println("--전체 출력: entrySet() 사용 1번--");
 		Set<Map.Entry<Object, Object>> entry =carMap.entrySet();

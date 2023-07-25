@@ -51,9 +51,10 @@ public class ArrayListWrapperMain {
 		int score1=scoreList.get(0);
 		System.out.println("score1: "+score1); //1
 		System.out.println(scoreList.get(1)); //2
-		int score2 =scoreList.get(1).intValue();
+		int score2 =scoreList.get(1).intValue(); //2
 		int score3=scoreList.get(2).valueOf(score2);
 		System.out.println(">>>>>"+score3);
+		System.out.println("scoreList: "+scoreList);
 		System.out.println("--set(index)--");
 		scoreList.set(2, score3);
 		System.out.println(">>>"+score3);//2

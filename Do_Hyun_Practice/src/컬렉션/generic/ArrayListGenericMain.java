@@ -13,7 +13,17 @@ public class ArrayListGenericMain {
 		Account acc4 = new Account(4444, "YONG", 45000, 1.2);
 		Account acc5 = new Account(5555, "SANG", 99000, 0.9);
 		
+		//또다른 배열 객체 생성 방법
+//		Account accountArray[]=new Account[] {
+//				new Account(1111, "BING", 33000, 0.5),
+//				new Account(2222, "KING", 12000, 0.1),
+//				new Account(3333, "KING", 89000, 0.8),
+//				new Account(4444, "YONG", 45000, 1.2),
+//				new Account(5555, "SANG", 99000, 0.9)
+//		};
+		
 		//ArrayList 리스트 배열 객체 생성
+		//accountList가 Account타입이라서 Account의 모든 필드 사용할 수 있음
 		ArrayList<Account> accountList=new ArrayList<Account>();
 		System.out.println("배열 리스트 생성: "+accountList); //아직 아무것도 없음
 		System.out.println("배열 리스트 크기: "+accountList.size()); //0
@@ -84,6 +94,7 @@ public class ArrayListGenericMain {
 //		for(Account array: accountList) {
 //			if(array.getNo()==4444) {
 //				accountList.remove(array);
+//				break;
 //			}
 //		}
 		
